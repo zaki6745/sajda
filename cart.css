@@ -1,0 +1,66 @@
+/* Center everything */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  background-color:#eeeeee;
+}
+
+/* Titles */
+h2, h3 {
+  text-align: center;
+}
+
+/* Cart container */
+#cart-items {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Cart item box */
+.cart-item {
+  background: #f5f5f5;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  max-width: 400px;   /* change size here */
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Confirm button */
+.confirm-btn {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  margin-top: 15px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background: #333;
+}
+@media (max-width: 800px) {
+  .confirm-btn{
+    max-width: 800px;
+    height: 50px;
+  }
+}

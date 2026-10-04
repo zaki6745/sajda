@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #eeeeee;
+  color: black;
+  overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.logo {
+  width: 60px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #888;
+}
+.my-icon {
+  font-size: 20px;
+}
+.my-icon1 {
+  font-size: 20px;
+}
+
+
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+/* COLORS */
+.colors {
+  display: flex;
+  gap: 10px;
+}
+
+.color-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.color-btn.black { background: black; }
+.color-btn.white { background: white; }
+.color-btn.red { background: red; }
+
+.color-btn.active {
+  border: 3px solid black;
+}
+
+/* SIZES */
+.sizes {
+  display: flex;
+  gap: 10px;
+}
+
+.size-btn {
+  padding: 6px 12px;
+  border: 1px solid black;
+  background: white;
+  cursor: pointer;
+}
+
+.size-btn.active {
+  background: black;
+  color: white;
+}
+
+button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.cart-link {
+  margin-top: o;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+}
+.colors,
+.sizes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px auto;
+}
+
+#qty {
+  width: 70px;
+  text-align: center;
+  margin: 8px auto;
+  display: block;
+}
+
+
+
+.product-card {
+  background: white;
+  padding: 20px;
+  width: 95%;          /* ✅ responsive */
+  max-width: 500px;    /* keeps it nice on PC */
+  border-radius: 12px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+#product-img {
+  width: 100%;         /* ✅ full width inside card */
+  max-width: 350px;    /* optional limit */
+  display: block;
+  margin: 15px auto;
+}
+
+
+body {
+  min-height: 100vh;
+  background: #eeeeee;
+  color: black;
+    flex-direction: column;
+}
+h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+@media (max-width: 600px) {
+  .product-card {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 0;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumb {
+  width: 60px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumb:hover {
+  border: 2px solid black;
+}
+.t-shirt-card {
+  background: white;
+  padding: 20px;
+  width: 95%;          /* ✅ responsive */
+  max-width: 500px;    /* keeps it nice on PC */
+  border-radius: 12px;
+  margin: 40px auto;
+  text-align: center;
+}

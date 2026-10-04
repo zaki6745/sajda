@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #eeeeee;
+  color: black;
+  overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    justify-content: center;
+}
+  .logo {
+    width: 60px;
+    height: auto;
+  }
+  .container {
+  padding: 40px;
+}
+.container h4 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+.content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  justify-content: space-evenly;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #888;
+}
+.my-icon {
+  font-size: 40px;
+}
+.content a {
+  display: flex;
+  flex-direction: column;   /* icon on top, text under */
+  align-items: center;      /* center horizontally */
+  justify-content: center;
+  gap: 8px;                 /* space between icon and text */
+}
+.logo2-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.logo2 {
+  width: 300px;   
+  height: auto;   
+}

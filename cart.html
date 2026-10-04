@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<h2>Your Cart</h2>
+<div id="cart-items"></div>
+
+<h3>Your Information</h3>
+<input id="name" placeholder="Full Name">
+<input id="phone" placeholder="Phone Number">
+<input id="address" placeholder="Address">
+
+<button class="confirm-btn" onclick="confirmOrder()">Confirm Order</button>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const cartDiv = document.getElementById("cart-items");
+
+function renderCart() {
+  cartDiv.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, i) => {
+    total += item.price * item.qty;
+
+    cartDiv.innerHTML += `
+      <div class="cart-item">
+        <b>${item.name}</b><br>
+        Color: ${item.color} | Size: ${item.size}<br>
+
+        <button onclick="minus(${i})">−</button>
+        <span>${item.qty}</span>
+        <button onclick="plus(${i})">+</button>
+
+        <p>${item.price * item.qty} DA</p>
+      </div>
+    `;
+  });
+
+  cartDiv.innerHTML += `<h3>Total: ${total} DA</h3>`;
+}
+
+function plus(i) {
+  cart[i].qty++;
+  save();
+}
+
+function minus(i) {
+  if (cart[i].qty > 1) cart[i].qty--;
+  else cart.splice(i,1);
+  save();
+}
+
+function save() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+renderCart();
+
+function confirmOrder() {
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let address = document.getElementById("address").value;
+
+  if (!name || !phone || !address) {
+    alert("Fill all fields");
+    return;
+  }
+
+  let msg = "🛍️ NEW ORDER\n\n";
+  let total = 0;
+
+  cart.forEach(item => {
+    msg += `${item.name}
+Color: ${item.color}
+Size: ${item.size}
+Qty: ${item.qty}
+----------------\n`;
+    total += item.price * item.qty;
+  });
+
+  msg += `
+Total: ${total} DA
+
+Name: ${name}
+Phone: ${phone}
+Address: ${address}
+`;
+
+  let myPhone = "213773365156"; // YOUR NUMBER
+  window.open(
+    `https://wa.me/${myPhone}?text=${encodeURIComponent(msg)}`,
+    "_blank"
+  );
+
+  localStorage.removeItem("cart");
+}
+</script>
+
+</body>
+</html>
